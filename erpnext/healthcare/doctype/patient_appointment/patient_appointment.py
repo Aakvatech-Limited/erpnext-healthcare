@@ -6,7 +6,7 @@ from __future__ import unicode_literals
 import frappe
 from frappe.model.document import Document
 import json
-from frappe.utils import getdate, get_time, add_days, time_diff_in_seconds
+from frappe.utils import getdate, get_time, add_days, time_diff_in_seconds, flt
 from frappe.model.mapper import get_mapped_doc
 from frappe import _
 import datetime
