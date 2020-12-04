@@ -16,7 +16,8 @@ class PatientEncounter(Document):
 		self.set_title()
 		if self.drug_prescription:
 			for drug in self.drug_prescription:
-				drug.quantity = get_quantity(drug)
+				if not drug.quantity or drug.quantity == 0:
+					drug.quantity = get_quantity(drug)
 
 	def on_update(self):
 		if self.appointment:
