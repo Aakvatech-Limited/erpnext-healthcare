@@ -286,7 +286,6 @@ def make_insurance_claim(doc):
 			doc.reload()
 
 def get_quantity(self):
-	frappe.msgprint(self.name)
 	quantity = 0
 	dosage = None
 	period = None
