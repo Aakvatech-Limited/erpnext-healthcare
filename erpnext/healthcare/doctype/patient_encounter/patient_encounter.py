@@ -169,7 +169,7 @@ def create_healthcare_service_order(encounter):
 				'referring_practitioner':encounter.referring_practitioner,
 				'insurance_subscription' : encounter.insurance_subscription if encounter.insurance_subscription else '',
 				'order_reference_doctype' : "Lab Prescription",
-				'order_reference_name' : lab_template.name
+				'order_reference_name' : labtest.name
 				}
 			make_healthcare_service_order(args)
 	if encounter.procedure_prescription:
@@ -201,7 +201,7 @@ def create_healthcare_service_order(encounter):
 				'referring_practitioner':encounter.referring_practitioner,
 				'insurance_subscription' : encounter.insurance_subscription if encounter.insurance_subscription else '',
 				'order_reference_doctype' : "Procedure Prescription",
-				'order_reference_name' : procedure_template.name
+				'order_reference_name' : procedure.name
 				}
 			make_healthcare_service_order(args)
 	if encounter.therapies:
@@ -263,7 +263,7 @@ def create_healthcare_service_order(encounter):
 				'referring_practitioner':encounter.referring_practitioner,
 				'insurance_subscription' : encounter.insurance_subscription if encounter.insurance_subscription else '',
 				'order_reference_doctype' : "Radiology Procedure Prescription",
-				'order_reference_name' : radiology_template.name
+				'order_reference_name' : radiology.name
 				}
 			make_healthcare_service_order(args)
 
