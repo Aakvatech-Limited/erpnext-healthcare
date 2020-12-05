@@ -136,7 +136,9 @@ def create_healthcare_service_order(encounter):
 				'note': drug.get_value('note'),
 				'patient_instruction': drug.get_value('patient_instruction'),
 				'company':encounter.company,
-				'insurance_subscription' : encounter.insurance_subscription if encounter.insurance_subscription else ''
+				'insurance_subscription' : encounter.insurance_subscription if encounter.insurance_subscription else '',
+				'order_reference_doctype' : "Drug Prescription",
+				'order_reference_name' : drug.name
 				}
 			make_healthcare_service_order(args)
 	if encounter.lab_test_prescription:
@@ -165,7 +167,9 @@ def create_healthcare_service_order(encounter):
 				'company':encounter.company,
 				'source':encounter.source,
 				'referring_practitioner':encounter.referring_practitioner,
-				'insurance_subscription' : encounter.insurance_subscription if encounter.insurance_subscription else ''
+				'insurance_subscription' : encounter.insurance_subscription if encounter.insurance_subscription else '',
+				'order_reference_doctype' : "Lab Prescription",
+				'order_reference_name' : lab_template.name
 				}
 			make_healthcare_service_order(args)
 	if encounter.procedure_prescription:
@@ -195,7 +199,9 @@ def create_healthcare_service_order(encounter):
 				'company':encounter.company,
 				'source':encounter.source,
 				'referring_practitioner':encounter.referring_practitioner,
-				'insurance_subscription' : encounter.insurance_subscription if encounter.insurance_subscription else ''
+				'insurance_subscription' : encounter.insurance_subscription if encounter.insurance_subscription else '',
+				'order_reference_doctype' : "Procedure Prescription",
+				'order_reference_name' : procedure_template.name
 				}
 			make_healthcare_service_order(args)
 	if encounter.therapies:
@@ -220,7 +226,12 @@ def create_healthcare_service_order(encounter):
 				'staff_role': therapy_type.get_value('staff_role'),
 				'note': therapy.get_value('note'),
 				'patient_instruction': therapy.get_value('patient_instruction'),
-				'company':encounter.company
+				'company':encounter.company,
+				'source':encounter.source,
+				'referring_practitioner':encounter.referring_practitioner,
+				'insurance_subscription' : encounter.insurance_subscription if encounter.insurance_subscription else '',
+				'order_reference_doctype' : "Therapy Plan",
+				'order_reference_name' : therapy.name
 				# 'healthcare_service_unit_type':therapy_type.get_value('healthcare_service_unit_type')
 				}
 			make_healthcare_service_order(args)
@@ -250,7 +261,9 @@ def create_healthcare_service_order(encounter):
 				'company':encounter.company,
 				'source':encounter.source,
 				'referring_practitioner':encounter.referring_practitioner,
-				'insurance_subscription' : encounter.insurance_subscription if encounter.insurance_subscription else ''
+				'insurance_subscription' : encounter.insurance_subscription if encounter.insurance_subscription else '',
+				'order_reference_doctype' : "Radiology Procedure Prescription",
+				'order_reference_name' : radiology_template.name
 				}
 			make_healthcare_service_order(args)
 
