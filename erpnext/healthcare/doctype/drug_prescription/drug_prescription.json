@@ -31,7 +31,9 @@
   "priority",
   "occurrence",
   "occurence_period",
-  "note"
+  "note",
+  "section_break_25",
+  "drug_prescription_created"
  ],
  "fields": [
   {
@@ -184,11 +186,21 @@
    "fieldname": "note",
    "fieldtype": "Small Text",
    "label": "Note"
+  },
+  {
+   "fieldname": "section_break_25",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "drug_prescription_created",
+   "fieldtype": "Check",
+   "label": "drug_prescription_created"
   }
  ],
  "istable": 1,
  "links": [],
- "modified": "2020-09-18 18:23:12.599219",
+ "modified": "2020-12-09 23:13:18.033810",
  "modified_by": "Administrator",
  "module": "Healthcare",
  "name": "Drug Prescription",
