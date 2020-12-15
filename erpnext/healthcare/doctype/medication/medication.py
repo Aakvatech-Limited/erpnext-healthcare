@@ -62,7 +62,7 @@ def create_item_from_medication(doc):
 		'is_sales_item': 1,
 		'is_service_item': 1,
 		'is_purchase_item': 0,
-		'is_stock_item': 0,
+		'is_stock_item': 1,
 		'show_in_website': 0,
 		'is_pro_applicable': 0,
 		'disabled': disabled,
