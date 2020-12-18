@@ -58,10 +58,7 @@ class Patient(Document):
 		update_contacts(self)
 
 	def set_full_name(self):
-		if self.last_name:
-			self.patient_name = ' '.join(filter(None, [self.first_name, self.last_name]))
-		else:
-			self.patient_name = self.first_name
+		self.patient_name = ' '.join(filter(None, [self.first_name, self.middle_name or "", self.last_name or ""]))
 
 	def set_missing_customer_details(self):
 		if not self.customer_group:
