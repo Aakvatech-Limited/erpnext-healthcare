@@ -212,7 +212,7 @@ before_tests = "erpnext.setup.utils.before_tests"
 
 standard_queries = {
 	"Customer": "erpnext.selling.doctype.customer.customer.get_customer_list",
-	"Healthcare Practitioner": "erpnext.healthcare.doctype.healthcare_practitioner.healthcare_practitioner.get_practitioner_list"
+	# "Healthcare Practitioner": "erpnext.healthcare.doctype.healthcare_practitioner.healthcare_practitioner.get_practitioner_list"
 }
 
 doc_events = {
